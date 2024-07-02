@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="min-h-screen min-w-screen bg-personalizado bg-[#001f21]">
 
-      <div className='sticky top-5 text-white'>
+      <div className='sticky top-5 '>
         <div className='flex justify-center '>
           <div className='flex gap-2 md:gap-10 text-md md:text-xl py-5 px-8 md:py-5 md:px-10 rounded-2xl bg-[#ecc039] z-10'>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Inicio</a>
@@ -32,7 +32,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center h-[calc(100vh-130px)]">
+      <div className="flex flex-col justify-center items-center h-[calc(100vh-140px)]">
         <h1 className="text-3xl md:text-6xl font-bold text-white">Hola, Soy  <span className="text-[#ecc039]"> Tomas 👋</span></h1>
         <h1 className="text-4xl md:text-7xl font-bold text-gray-400">Front End Developer</h1>
         {/* <div className='flex gap-5 text-2xl pt-6'>
