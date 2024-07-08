@@ -25,8 +25,8 @@ function App() {
         <div className='flex justify-center '>
           <div className='flex gap-2 md:gap-10 text-md md:text-xl py-5 px-8 md:py-5 md:px-10 rounded-2xl bg-[#ecc039] z-10'>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Inicio</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#proyectos'>Proyectos</a>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#sobreMi'>Sobre mi</a>
+            <a className='hover:scale-110 transition-all cursor-pointer' href='#proyectos'>Proyectos</a>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Contactame</a>
           </div>
         </div>
