@@ -3,7 +3,7 @@ import finanzasImg from './assets/image.png'
 
 const CardProject = ({ img, title, url, description }) => {
   return (
-    <div className="max-w-96 bg-[#ebe7b7] hover:bg-[#ebe7b7f5] hover:scale-105 cursor-pointer transition-all p-5 rounded-xl shadow-xl h-[370px]">
+    <div className="max-w-96 bg-white hover:bg-[#ebe7b7f5] hover:scale-105 cursor-pointer transition-all p-5 rounded-xl shadow-xl h-[370px]">
       <div className='flex justify-center'>
         {/* <img className="rounded-lg mb-3" width={300} src={img} /> */}
         <img className="rounded-lg mb-3" width={300} src='https://thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png' />
@@ -25,8 +25,8 @@ function App() {
         <div className='flex justify-center '>
           <div className='flex gap-2 md:gap-10 text-md md:text-xl py-5 px-8 md:py-5 md:px-10 rounded-2xl bg-[#ecc039] z-10'>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Inicio</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Proyectos</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Sobre mi</a>
+            <a className='hover:scale-110 transition-all cursor-pointer' href='#proyectos'>Proyectos</a>
+            <a className='hover:scale-110 transition-all cursor-pointer' href='#sobreMi'>Sobre mi</a>
             <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Contactame</a>
           </div>
         </div>
@@ -43,7 +43,7 @@ function App() {
       <div className='h-10 bg-[#ecc039]'></div>
       <div className='h-10 bg-[#de4f15]'></div>
 
-      <div className='grid  gap-5 mt-6 px-5 text-white md:w-[700px] lg:w-[1200px] mx-auto'>
+      <div className='grid gap-5 mt-6 px-5 text-white md:w-[700px] lg:w-[900px] mx-auto pt-32' id='sobreMi'>
         {/* md:grid-cols-2 */}
         <div className='border rounded-xl p-4'>
           {/* bg-[#029b983d] */}
@@ -56,22 +56,42 @@ function App() {
         </div> */}
       </div>
 
-      <div className='flex justify-center my-10'>
+      <div className='flex justify-center my-10 pt-32' id='proyectos'>
         <h3 className='text-white text-4xl font-bold'>Proyectos</h3>
       </div>
-      <div className="flex flex-col lg:flex-row gap-5 justify-center items-center " >
-        <CardProject
-          title={'Tareas'}
-          url={'https://tareas-dev.netlify.app/'}
-          img={tareaImg}
-          description={'Pagina para escribir tareas y marcarlas como terminadas 👍, creada con react / firebase / tailwind'}
-        />
-        <CardProject
-          title={'Finanzas App'}
-          url={'https://finanzasdev.netlify.app/'}
-          img={finanzasImg}
-          description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
-        />
+      <div className='flex justify-center'>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" >
+          <CardProject
+            title={'Lista de tareas'}
+            url={'https://tareas-dev.netlify.app/'}
+            img={tareaImg}
+            description={'Pagina para escribir tareas y marcarlas como terminadas 👍, creada con react / firebase / tailwind'}
+          />
+          <CardProject
+            title={'Finanzas App'}
+            url={'https://finanzasdev.netlify.app/'}
+            img={finanzasImg}
+            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
+          />
+          <CardProject
+            title={'Visualizador de hora'}
+            url={'https://finanzasdev.netlify.app/'}
+            img={finanzasImg}
+            description={'Pagina para ver la hora con diferente estetica'}
+          />
+          <CardProject
+            title={'Registro de gastos'}
+            url={'https://finanzasdev.netlify.app/'}
+            img={finanzasImg}
+            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
+          />
+          <CardProject
+            title={'Clima'}
+            url={'https://finanzasdev.netlify.app/'}
+            img={finanzasImg}
+            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
+          />
+        </div>
       </div>
 
       <div className='mt-20 h-10 bg-[#001f21]'></div>
