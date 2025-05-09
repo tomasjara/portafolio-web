@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
-
+import { MdOutlineEmail } from "react-icons/md";
+import { FiGithub } from "react-icons/fi";
+import { IconLinkContainer } from "../App";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   // Cambia sectionIds a una lista de objetos con id y name
   const sections = [
     { id: 'inicio', name: 'Inicio' },
-    { id: 'sobre-mi', name: 'Sobre mí' },
+    { id: 'habilidades', name: 'Habilidades' },
     { id: 'experiencia', name: 'Experiencia' },
+    { id: 'sobre-mi', name: 'Sobre mí' },
   ];
 
   const activeSection = useActiveSection(sections.map(section => section.id));
@@ -40,13 +43,20 @@ export default function Navbar() {
                   key={id}
                   href={`#${id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
+                  className={`hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all text-white`}
+                // className={`hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
                 >
                   {name}
                 </a>
               ))}
             </div>
-            <div className="hidden sm:flex"></div>
+            <div className="hidden sm:flex justify-center gap-5">
+              <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />
+              {/* <IconLinkContainer icon={<CiLinkedin />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+              {/* <IconLinkContainer icon={<FaInstagram />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+              <IconLinkContainer icon={<FiGithub />} link="https://github.com/tomasjara" />
+              {/* <IconLinkContainer icon={<FaThreads />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+            </div>
           </div>
 
           {isOpen && (
@@ -57,7 +67,7 @@ export default function Navbar() {
                   href={`#${id}`}
                   onClick={() => setIsOpen(false)}
                   className={`text-center hover:text-white hover:bg-gray-800 rounded-md py-5 transition-all text-white text-2xl`}
-                  // className={`text-center hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
+                // className={`text-center hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
                 >
                   {name}
                 </a>
