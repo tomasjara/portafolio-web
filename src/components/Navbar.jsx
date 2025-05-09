@@ -14,18 +14,18 @@ export default function Navbar() {
   const activeSection = useActiveSection(sections.map(section => section.id));
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent text-white z-50 pt-2 ">
+    <nav className="fixed top-0 left-0 w-full bg-transparent text-white z-50 pt-2 transition-all">
       <div className="px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
         <div className="bg-[#06080c] rounded-md border border-[#292929] ">
           <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div className="text-xl font-bold">TJ</div>
+            <div className="text-2xl font-bold">TJ</div>
 
             <button
               className="sm:hidden"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -50,13 +50,14 @@ export default function Navbar() {
           </div>
 
           {isOpen && (
-            <div className="sm:hidden flex flex-col gap-1 pt-1 pb-6 px-4 ">
+            <div className="sm:hidden flex flex-col gap-4 pt-1 pb-6 px-4 h-screen">
               {sections.map(({ id, name }) => (
                 <a
                   key={id}
                   href={`#${id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`text-center hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
+                  className={`text-center hover:text-white hover:bg-gray-800 rounded-md py-5 transition-all text-white text-2xl`}
+                  // className={`text-center hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
                 >
                   {name}
                 </a>

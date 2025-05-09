@@ -26,7 +26,7 @@ export const App = () => {
         <Card className={"md:col-span-2"} >
           <h1 className="text-4xl font-bold text-center"><span className="animate-bounce text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
           <h2 className="text-md text-center font-extralight">Frontend Developer · Web & Mobile</h2>
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-5">
             <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />
             {/* <IconLinkContainer icon={<CiLinkedin />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
             {/* <IconLinkContainer icon={<FaInstagram />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
