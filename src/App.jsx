@@ -1,106 +1,102 @@
-import tareaImg from './assets/Sin título.png'
-import finanzasImg from './assets/image.png'
+import { FiGithub } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import Navbar from "./components/Navbar";
 
-const CardProject = ({ img, title, url, description }) => {
+const IconLinkContainer = ({ icon, link }) => {
   return (
-    <div className="max-w-96 bg-white hover:bg-[#ebe7b7f5] hover:scale-105 cursor-pointer transition-all p-5 rounded-xl shadow-xl h-[370px]">
-      <div className='flex justify-center'>
-        {/* <img className="rounded-lg mb-3" width={300} src={img} /> */}
-        <img className="rounded-lg mb-3" width={300} src='https://thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png' />
-      </div>
-      <a href={url}
-        // target="_blank" 
-        className="text-3xl font-bold mb-1"
-      >{title}</a>
-      <p className="mt-3">{description}</p>
+    <a className="text-lg border-2 border-white border-opacity-30 rounded-full p-2" href={link} target="_blank" rel="noopener noreferrer">
+      {icon}
+    </a>
+  )
+}
+
+const Card = ({ children, className, id }) => {
+  return (
+    <div id={id} className={`flex flex-col gap-3 rounded-3xl bg-[#10151f] p-5 ${className}`} style={{ border: ".0625rem solid #292929" }}>
+      {children}
     </div>
   )
 }
 
-function App() {
+export const App = () => {
   return (
-    <div className="min-h-screen min-w-screen bg-personalizado bg-[#001f21]">
+    <div className="flex flex-col gap-40 px-4 md:px-6 lg:px-8 max-w-screen-xl mx-auto text-white pt-40 mb-20">
+      <Navbar />
+      <div className="flex flex-col gap-3 scroll-mt-40" id="inicio">
+        <Card className={"md:col-span-2"} >
+          <h1 className="text-4xl font-bold text-center"><span className="animate-bounce text-4xl">👋</span>Hola, Soy Tomás Jara</h1>
+          <h2 className="text-md text-center font-extralight">Frontend Developer · Web & Mobile</h2>
+          <div className="flex justify-center gap-2">
+            <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />
+            {/* <IconLinkContainer icon={<CiLinkedin />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+            {/* <IconLinkContainer icon={<FaInstagram />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+            <IconLinkContainer icon={<FiGithub />} link="https://github.com/tomasjara" />
+            {/* <IconLinkContainer icon={<FaThreads />} link="mailto:tomas.garcia.dev@gmail.com" /> */}
+          </div>
+          <p className="text-lg text-center">Motivado por encontrar oportunidades para crear, optimizar y mantener software funcional, útil y de calidad.</p>
+        </Card>
+        <Card className="flex flex-col gap-1 w-full">
+          <h2 className="text-2xl font-bold">🧑‍💻 Formación Académica</h2>
+          <p><strong>Inacap</strong> (2019 - 2021) Analista Programador</p>
+        </Card>
+      </div>
 
-      <div className='sticky top-5 '>
-        <div className='flex justify-center '>
-          <div className='flex gap-2 md:gap-10 text-md md:text-xl py-5 px-8 md:py-5 md:px-10 rounded-2xl bg-[#ecc039] z-10'>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Inicio</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#sobreMi'>Sobre mi</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#proyectos'>Proyectos</a>
-            <a className='hover:scale-110 transition-all cursor-pointer' href='#'>Contactame</a>
+      <Card className="scroll-mt-20" id="sobre-mi">
+        <h2 className="text-2xl font-bold">🙋 Sobre mí</h2>
+        <p className="text-sm text-gray-600">Frontend Developer</p>
+        <div className="text-lg space-y-4 text-gray-300">
+          <p>Mi camino ha estado lleno de <strong className="font-semibold text-green-500">intentos, aprendizajes y exploraciones.</strong> Contribuí en proyectos que nunca llegaron a lanzarse, comencé proyectos propios que quedaron a mitad del camino, seguí tutoriales y documentación técnica, y en el proceso fui descubriendo <strong className="font-semibold text-green-500">mi forma de aprender y construir.</strong></p>
+          <p>He adquirido conocimientos en <strong className="font-semibold text-green-500">testing, arquitectura de software y documentación de proyectos</strong>, y hoy estoy terminando “Mis Gastos”, una aplicación móvil que pronto estará disponible en la Play Store. Este proyecto marca un hito personal, porque representa lo que logré sostener, terminar y pulir.</p>
+          <p>Reconozco que aún me queda mucho por aprender, pero en el camino he fortalecido mis fundamentos y hoy cuento con un abanico de <strong className="font-semibold text-green-500">herramientas, librerías y tecnologías</strong> que puedo seguir ampliando para avanzar y crecer en cada desafío.</p>
+        </div>
+      </Card>
+
+      <Card className="scroll-mt-20" id="experiencia">
+        <h2 className="text-2xl font-bold">📈 Experiencia</h2>
+        <div className="border-l-4 border-green-500 pl-4 space-y-10">
+          <div>
+            <h3 className="text-lg font-bold text-green-400">Mis Gastos</h3>
+            {/* <h4 className="text-xl font-semibold">Mis Gastos</h4> */}
+            {/* <h5 className="text-md italic text-gray-400">Subtítulo del 2023</h5> */}
+            <p className="text-gray-300 text-md">
+              <p>Aplicación móvil enfocada en facilitar el registro y seguimiento de gastos personales</p>
+              <div className="leading-8">
+                <p>- <strong>Tecnologías:</strong> React Native, Expo, AsyncStorage</p>
+                <p>- <strong>Funciones principales:</strong> Registro de gastos, categorización de movimientos, generación de estadísticas.</p>
+                <p>- <strong>Estado:</strong> Publicación próxima en Google Play Store.</p>
+              </div>
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-green-400">Plataforma de Gestión para Comunidades</h3>
+            {/* <h4 className="text-xl font-semibold">Plataforma de Gestión para Comunidades</h4> */}
+            {/* <h5 className="text-md italic text-gray-400">Subtítulo del 2024</h5> */}
+            <p className="text-gray-300 text-md">
+              <p>Desarrollo colaborativo de una solución digital para la administración de condominios y edificios.</p>
+              <div className="leading-8">
+                <p>- <strong>Tecnologías:</strong> React Native, Expo, Docker, Kubernetes, Express.js, Nest.js</p>
+                <p>- <strong>Contribuciones:</strong> Desarrollo móvil y colaboración en la integración de servicios backend.</p>
+                <p>- <strong>Estado:</strong> Proyecto detenido antes de lanzamiento.</p>
+              </div>
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-green-400">Plataforma Modular para Negocios</h3>
+            {/* <h4 className="text-xl font-semibold">Plataforma Modular para Negocios</h4> */}
+            {/* <h5 className="text-md italic text-gray-400">Subtítulo del 2025</h5> */}
+            <p className="text-gray-300 text-md ">
+              <p>Desarrollo frontend de una plataforma escalable para la gestión de múltiples negocios mediante componentes reutilizables.</p>
+              <div className="leading-8">
+                <p>- <strong>Tecnologías:</strong> React, JavaScript, TailwindCSS</p>
+                <p>- <strong>Contribuciones:</strong> Implementación de arquitectura modular y diseño responsivo.</p>
+                <p>- <strong>Estado:</strong> Proyecto detenido antes de lanzamiento.</p>
+              </div>
+            </p>
           </div>
         </div>
-      </div>
+      </Card>
 
-      <div className="flex flex-col justify-center items-center h-[calc(100vh-140px)]">
-        <h1 className="text-3xl md:text-6xl font-bold text-white">Hola, Soy  <span className="text-[#ecc039]"> Tomas 👋</span></h1>
-        <h1 className="text-4xl md:text-7xl font-bold text-gray-400">Front End Developer</h1>
-        {/* <div className='flex gap-5 text-2xl pt-6'>
-          <a className='p-3 bg-[#de4f15] text-white rounded-xl w-40 text-center' href='#'>Contactame</a>
-          <a className='p-3 bg-[#de4f15] text-white rounded-xl w-40 text-center' href='#'>Sobre mi</a>
-        </div> */}
-      </div>
-      <div className='h-10 bg-[#ecc039]'></div>
-      <div className='h-10 bg-[#de4f15]'></div>
-
-      <div className='grid gap-5 mt-6 px-5 text-white md:w-[700px] lg:w-[900px] mx-auto pt-32' id='sobreMi'>
-        {/* md:grid-cols-2 */}
-        <div className='border rounded-xl p-4'>
-          {/* bg-[#029b983d] */}
-          <h3 className='text-3xl mb-4 font-bold text-center'>Sobre mi 🫡</h3>
-          <p className='mb-3 text-xl'>Mi objetivo como programador es crear <span className='text-[#ecc039]'>productos amigables</span> con el usuario para una <span className='text-[#ecc039]'>interaccion intuitiva</span> y poder <span className='text-[#ecc039]'>solucionar problemas.</span></p>
-          <p></p>
-        </div>
-        {/* <div className='bg-[#029b983d] rounded-xl p-4'>
-
-        </div> */}
-      </div>
-
-      <div className='flex justify-center my-10 pt-32' id='proyectos'>
-        <h3 className='text-white text-4xl font-bold'>Proyectos</h3>
-      </div>
-      <div className='flex justify-center'>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" >
-          <CardProject
-            title={'Lista de tareas'}
-            url={'https://tareas-dev.netlify.app/'}
-            img={tareaImg}
-            description={'Pagina para escribir tareas y marcarlas como terminadas 👍, creada con react / firebase / tailwind'}
-          />
-          <CardProject
-            title={'Finanzas App'}
-            url={'https://finanzasdev.netlify.app/'}
-            img={finanzasImg}
-            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
-          />
-          <CardProject
-            title={'Visualizador de hora'}
-            url={'https://finanzasdev.netlify.app/'}
-            img={finanzasImg}
-            description={'Pagina para ver la hora con diferente estetica'}
-          />
-          <CardProject
-            title={'Registro de gastos'}
-            url={'https://finanzasdev.netlify.app/'}
-            img={finanzasImg}
-            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
-          />
-          <CardProject
-            title={'Clima'}
-            url={'https://finanzasdev.netlify.app/'}
-            img={finanzasImg}
-            description={'Pagina para registrar datos y poder realizar analisis de estos, con graficos, alertas y resumenes, creada con react / tailwind / lib de tablas / localstorage'}
-          />
-        </div>
-      </div>
-
-      <div className='mt-20 h-10 bg-[#001f21]'></div>
-      <div className='h-10 bg-[#029b99]'></div>
-      <div className='h-10 bg-[#ebe7b7]'></div>
-      <div className='h-10 bg-[#de4f15]'></div>
-      <div className='h-10 bg-[#ecc039]'></div>
     </div>
   )
 }
-
-export default App
