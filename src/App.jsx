@@ -20,11 +20,11 @@ const Card = ({ children, className, id }) => {
 
 export const App = () => {
   return (
-    <div className="flex flex-col gap-40 px-4 md:px-6 lg:px-8 max-w-screen-xl mx-auto text-white pt-40 mb-20">
+    <div className="flex flex-col gap-40 px-4 md:px-6 lg:px-8 max-w-screen-xl mx-auto text-white pt-40 pb-20">
       <Navbar />
       <div className="flex flex-col gap-3 scroll-mt-40" id="inicio">
         <Card className={"md:col-span-2"} >
-          <h1 className="text-4xl font-bold text-center"><span className="animate-bounce text-4xl">👋</span>Hola, Soy Tomás Jara</h1>
+          <h1 className="text-4xl font-bold text-center"><span className="animate-bounce text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
           <h2 className="text-md text-center font-extralight">Frontend Developer · Web & Mobile</h2>
           <div className="flex justify-center gap-2">
             <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />
@@ -52,7 +52,7 @@ export const App = () => {
       </Card>
 
       <Card className="scroll-mt-20" id="experiencia">
-        <h2 className="text-2xl font-bold">📈 Experiencia</h2>
+        <h2 className="text-2xl font-bold mb-3">📈 Experiencia</h2>
         <div className="border-l-4 border-green-500 pl-4 space-y-10">
           <div>
             <h3 className="text-lg font-bold text-green-400">Mis Gastos</h3>
