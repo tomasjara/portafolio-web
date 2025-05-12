@@ -1,28 +1,6 @@
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import Navbar from "./components/Navbar";
-import {
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaDocker,
-  FaDatabase,
-  FaRocket,
-  FaCogs,
-  FaFireAlt,
-} from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiJavascript,
-  SiFirebase,
-  SiSupabase,
-  SiJest,
-  SiTestinglibrary,
-  SiMarkdown,
-  SiNotion
-} from "react-icons/si";
 import { stackTecnologico, tecnologias } from "./utils/tecnologias";
 
 export const IconLinkContainer = ({ icon, link }) => {
@@ -52,11 +30,12 @@ const TagStack = ({ icon, name }) => {
 
 export const App = () => {
   return (
-    <div className="flex flex-col gap-20 px-4 md:px-6 lg:px-8 max-w-screen-lg mx-auto text-white pt-40 pb-20">
+
+    <div className="flex flex-col gap-20 px-4 md:px-6 lg:px-8 max-w-screen-lg mx-auto text-white pt-40 pb-20 scroll-smooth" style={{ fontFamily: "Helvetica" }}>
       <Navbar />
       <div className="flex flex-col gap-3 scroll-mt-40" id="inicio">
         <Card className={"md:col-span-2"} >
-          <h1 className="text-4xl font-bold text-center"><span className="animate-bounce text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
+          <h1 className="text-4xl font-bold text-center"><span className="text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
           <h2 className="text-md text-center font-extralight">Frontend Developer · Web & Mobile</h2>
           <div className="flex justify-center gap-5">
             <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />

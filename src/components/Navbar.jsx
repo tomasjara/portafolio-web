@@ -15,11 +15,12 @@ export default function Navbar() {
   ];
 
   const activeSection = useActiveSection(sections.map(section => section.id));
-
+  // w-full p-4 rounded-full flex bg-black bg-opacity-10 justify-between items-center sticky backdrop-blur-lg top-0 z-50
   return (
+
     <nav className="fixed top-0 left-0 w-full bg-transparent text-white z-50 pt-2 transition-all">
       <div className="px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
-        <div className="bg-[#06080c] rounded-md border border-[#292929] ">
+        <div className={`bg-[#06080c] ${isOpen ? '' : 'backdrop-blur-lg bg-opacity-10'}  rounded-md border border-[#292929] transition-all duration-600`}>
           <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
             <div className="text-2xl font-bold">TJ</div>
 
@@ -43,7 +44,7 @@ export default function Navbar() {
                   key={id}
                   href={`#${id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all text-white`}
+                  className={`hover:text-white font-medium hover:bg-gray-800 rounded-md p-2 transition-all text-white`}
                 // className={`hover:text-white hover:bg-gray-800 rounded-md p-2 transition-all ${activeSection === id ? 'text-white' : 'text-gray-500'}`}
                 >
                   {name}
