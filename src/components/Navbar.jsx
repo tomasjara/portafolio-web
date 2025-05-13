@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="md:px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto transition-all">
         <div className={`bg-[#06080c] ${isOpen ? '' : 'backdrop-blur-lg bg-opacity-10'}  md:rounded-md border border-[#292929] transition-all duration-600`}>
           <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" className="text-2xl font-bold select-none">TJ</a>
+            <a href="#" onClick={() => setIsOpen(false)} className="text-3xl font-bold select-none">TJ</a>
 
             <button
               className="sm:hidden"
