@@ -1,11 +1,12 @@
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import Navbar from "./components/Navbar";
 import { stackTecnologico, tecnologias } from "./utils/tecnologias";
+import { FaArrowDown } from "react-icons/fa6";
 
-export const IconLinkContainer = ({ icon, link }) => {
+export const IconLinkContainer = ({ icon, link, ariaLabel }) => {
   return (
-    <a className="text-lg border-2 border-white border-opacity-30 rounded-full p-2" href={link} target="_blank" rel="noopener noreferrer">
+    <a className="text-lg border-2 border-white border-opacity-30 rounded-full p-2" href={link} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
       {icon}
     </a>
   )
@@ -30,25 +31,27 @@ const TagStack = ({ icon, name }) => {
 
 export const App = () => {
   return (
-
-    <div className="flex flex-col gap-20 px-4 md:px-6 lg:px-8 max-w-screen-lg mx-auto text-white pt-40 pb-20 scroll-smooth" style={{ fontFamily: "Helvetica" }}>
+    <div className="flex flex-col gap-16 px-4 md:px-6 lg:px-8 max-w-screen-lg mx-auto text-white pt-40 pb-20 scroll-smooth" style={{ fontFamily: "Helvetica" }}>
       <Navbar />
       <div className="flex flex-col gap-3 scroll-mt-40" id="inicio">
         <Card className={"md:col-span-2"} >
           <h1 className="text-4xl font-bold text-center"><span className="text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
-          <h2 className="text-md text-center font-extralight">Frontend Developer · Web & Mobile</h2>
+          <h2 className="text-md text-center font-extralight text-gray-400">Frontend Developer · Web & Mobile</h2>
           <div className="flex justify-center gap-5">
-            <IconLinkContainer icon={<MdOutlineEmail />} link="mailto:tomasignaciojd@gmail.com" />
-            <IconLinkContainer icon={<FiGithub />} link="https://github.com/tomasjara" />
+            <IconLinkContainer icon={<MdOutlineEmail />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" />
+            <IconLinkContainer icon={<FiGithub />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" />
+            <IconLinkContainer icon={<FiLinkedin />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" />
           </div>
           <p className="text-lg text-center">Motivado por encontrar oportunidades para crear, optimizar y mantener software funcional, útil y de calidad.</p>
         </Card>
         <Card className="flex flex-col gap-1 w-full">
           <h2 className="text-2xl font-bold">🧑‍💻 Formación Académica</h2>
-          <p><strong>Inacap</strong> (2019 - 2021) Analista Programador</p>
+          <p><span className="font-semibold">Inacap</span> (2019 - 2021) Analista Programador</p>
         </Card>
       </div>
-
+      <div className="flex justify-center">
+        <FaArrowDown className="text-4xl p-2 w-12 h-12 animate-bounce" />
+      </div>
       <Card className="flex gap-2 scroll-mt-20" id="habilidades">
         <h2 className="text-2xl font-bold mb-3">👷‍♂️ Habilidades</h2>
         <div className="flex flex-col gap-4">
@@ -57,7 +60,7 @@ export const App = () => {
               key={grupo.category}
               className=""
             >
-              <h3 className="text-xl font-semibold mb-4 text-white">
+              <h3 className="text-xl font-medium mb-4 text-white">
                 {grupo.category}
               </h3>
               <ul className="flex flex-wrap gap-2">
