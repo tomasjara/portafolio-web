@@ -3,6 +3,7 @@ import { useActiveSection } from "../hooks/useActiveSection";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { IconLinkContainer } from "../App";
+import { CgFileDocument } from "react-icons/cg";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,7 +26,7 @@ export default function Navbar() {
             <a href="#" onClick={() => setIsOpen(false)} className="text-3xl font-bold select-none">TJ</a>
 
             <button
-              className="sm:hidden"
+              className="md:hidden"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -38,7 +39,7 @@ export default function Navbar() {
               </svg>
             </button>
 
-            <div className="hidden sm:flex gap-6 justify-center">
+            <div className="hidden md:flex gap-6 justify-center">
               {sections.map(({ id, name }) => (
                 <a
                   key={id}
@@ -50,16 +51,17 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-            <div className="hidden sm:flex justify-center  gap-1 md:gap-5">
-              <IconLinkContainer icon={<MdOutlineEmail />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" />
-              <IconLinkContainer icon={<FiGithub />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" />
-              <IconLinkContainer icon={<FiLinkedin />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" />
+            <div className="hidden md:flex justify-center  gap-1 md:gap-5">
+            <IconLinkContainer icon={<MdOutlineEmail />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" name="Email" />
+            <IconLinkContainer icon={<FiGithub />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" name="GitHub" />
+            <IconLinkContainer icon={<FiLinkedin />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" name="LinkedIn" />
+            <IconLinkContainer icon={<CgFileDocument />} ariaLabel="Descargar CV de Tomás Jara" link="/CV Tomás Jara Díaz.pdf" download name="CV" />
             </div>
           </div>
 
           {isOpen && (
             <>
-              <div className="sm:hidden flex flex-col gap-4 pt-1 pb-6 px-4 h-screen">
+              <div className="md:hidden flex flex-col gap-4 pt-1 pb-6 px-4 h-screen">
                 {sections.map(({ id, name }) => (
                   <a
                     key={id}
@@ -71,9 +73,10 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="flex justify-center gap-5 mt-5">
-                  <IconLinkContainer  icon={<MdOutlineEmail className="w-10 h-10" />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" />
-                  <IconLinkContainer  icon={<FiGithub className="w-10 h-10"/>} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" />
-                  <IconLinkContainer icon={<FiLinkedin className="w-10 h-10" />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" />
+                  <IconLinkContainer icon={<MdOutlineEmail className="w-10 h-10" />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" name="Email" />
+                  <IconLinkContainer icon={<FiGithub className="w-10 h-10" />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" name="GitHub" />
+                  <IconLinkContainer icon={<FiLinkedin className="w-10 h-10" />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" name="LinkedIn" />
+                  <IconLinkContainer icon={<CgFileDocument className="w-10 h-10" />} ariaLabel="Descargar CV de Tomás Jara" link="/CV Tomás Jara Díaz.pdf" download name="CV" />
                 </div>
               </div>
             </>

@@ -3,11 +3,15 @@ import { MdOutlineEmail } from "react-icons/md";
 import Navbar from "./components/Navbar";
 import { stackTecnologico, tecnologias } from "./utils/tecnologias";
 import { FaArrowDown } from "react-icons/fa6";
+import { CgFileDocument } from "react-icons/cg";
 
-export const IconLinkContainer = ({ icon, link, ariaLabel }) => {
+export const IconLinkContainer = ({ name, icon, link, ariaLabel, ...props }) => {
   return (
-    <a className="text-lg border-2 border-white border-opacity-30 rounded-full p-2" href={link} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
-      {icon}
+    <a className="flex flex-col justify-center items-center gap-1 text-lg " href={link} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} {...props}>
+      <div className="border-2 border-white border-opacity-30 rounded-full p-2">
+        {icon}
+      </div>
+      <p className="text-xs opacity-50">{name}</p>
     </a>
   )
 }
@@ -37,10 +41,11 @@ export const App = () => {
         <Card className={"md:col-span-2"} >
           <h1 className="text-4xl font-bold text-center"><span className="text-4xl">👋 </span>Hola, Soy Tomás Jara</h1>
           <h2 className="text-md text-center font-extralight text-gray-400">Frontend Developer · Web & Mobile</h2>
-          <div className="flex justify-center gap-5">
-            <IconLinkContainer icon={<MdOutlineEmail />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" />
-            <IconLinkContainer icon={<FiGithub />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" />
-            <IconLinkContainer icon={<FiLinkedin />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" />
+          <div className="flex md:hidden justify-center gap-5">
+            <IconLinkContainer icon={<MdOutlineEmail />} ariaLabel="Mandar correo a Tomás Jara" link="mailto:tomasignaciojd@gmail.com" name="Email" />
+            <IconLinkContainer icon={<FiGithub />} ariaLabel="Ir a Github de Tomás Jara" link="https://github.com/tomasjara" name="GitHub" />
+            <IconLinkContainer icon={<FiLinkedin />} ariaLabel="Ir a LinkedIn de Tomás Jara" link="https://www.linkedin.com/in/tomas-jara-diaz/" name="LinkedIn" />
+            <IconLinkContainer icon={<CgFileDocument />} ariaLabel="Descargar CV de Tomás Jara" link="/CV Tomás Jara Díaz.pdf" download name="CV" />
           </div>
           <p className="text-lg text-center">Motivado por encontrar oportunidades para crear, optimizar y mantener software funcional, útil y de calidad.</p>
         </Card>
