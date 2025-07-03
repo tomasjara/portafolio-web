@@ -51,7 +51,7 @@ export const App = () => {
         </Card>
         <Card className="flex flex-col gap-1 w-full">
           <h2 className="text-2xl font-bold">🧑‍💻 Formación Académica</h2>
-          <p><span className="font-semibold">Inacap</span> (2019 - 2021) Analista Programador</p>
+          <p><span className="font-semibold">Inacap</span> (2020 - 2022) Analista Programador</p>
         </Card>
       </div>
       <div className="flex justify-center">
@@ -90,7 +90,9 @@ export const App = () => {
               <div>
                 <div className="leading-8">
                   <p>- <strong>Funciones principales:</strong> Registro de gastos, categorización de movimientos, generación de estadísticas.</p>
-                  <p>- <strong>Estado:</strong> Publicación próxima en Google Play Store.</p>
+                  <p>- <strong>Estado:</strong> Publicado en Play Store para Android</p>
+                  <a href="https://play.google.com/store/apps/details?id=com.tomasjd.expensesapp" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline" >Enlace de la aplicación</a>
+                  {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">HOLAA</link> */}
                 </div>
                 {/* <p>- <strong>Tecnologías:</strong> React Native, Expo, AsyncStorage</p> */}
                 <div className="flex flex-wrap gap-2 mt-2">
